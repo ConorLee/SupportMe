@@ -1,0 +1,30 @@
+﻿@{
+    Func<ModelMetadata, bool> shouldShow = metadata =>
+    {
+        return metadata.ShowForEdit
+            //&& metadata.ModelType != typeof(System.Data.EntityState)
+            && !metadata.IsComplexType
+            && !ViewData.TemplateInfo.Visited(metadata);
+    };
+}
+@if (ViewData.TemplateInfo.TemplateDepth > 1)
+{
+    if (Model == null)
+    {
+        @ViewData.ModelMetadata.NullDisplayText
+    }
+    else
+    {
+        @ViewData.ModelMetadata.SimpleDisplayText
+    }
+}
+else
+{
+    foreach (var prop in ViewData.ModelMetadata.Properties.Where(shouldShow))
+    {
+        <div class="form-group">
+            @Html.Label(prop.PropertyName, new { @class = "control-label" })
+            <p class="form-control-static">@Html.DisplayText(prop.PropertyName)</p>
+        </div>
+    }
+}
