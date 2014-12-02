@@ -35,11 +35,11 @@ namespace Portal.Controllers
         //
         //POST : Add
         [HttpPost]
-        public ActionResult Add(Presentation ip, Boolean complete, string action)
+        public ActionResult Add(Presentation ip, string action)
         {
             if(action.ToLower() == "create")
             {
-                if (complete == false || complete == null)
+                if (ip.IsComplete == false || !ModelState.IsValid)
                 {
                     ViewBag.ErrorMessage = "An error has been detected!";
                     return View(ip);

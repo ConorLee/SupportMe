@@ -95,7 +95,7 @@ namespace SupportMe.Service
         /// Updates a given presentation
         /// </summary>
         /// <param name="servicePresentation">The service presentation</param>
-        void UpdatePresentation(Presentation servicePresentation)
+        public void UpdatePresentation(Presentation servicePresentation)
         {
             var existingPresentation = unitOfWork.InitialPresentationRepository.Items.SingleOrDefault(p => p.Id == servicePresentation.Id);
 

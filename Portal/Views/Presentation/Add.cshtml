@@ -16,15 +16,9 @@
         <hr />
         
         <!-- HTML EDITOR-->
-        @Html.EditorFor(m => m.name)
+        @Html.EditorFor(m => m.IsComplete)
 
         <input type="submit" name="action" value="Create" class="btn btn-default" />
-
-        <script type="text/jscript">
-            var InitialPresentation = {
-                "name" : m.name
-            };
-        </script>
 
     </div>
 }

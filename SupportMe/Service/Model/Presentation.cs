@@ -16,6 +16,11 @@ namespace SupportMe.Service.Model
         /// </summary>
         public Guid Id { get; set; }
 
+        /// <summary>
+        /// A flag indicating if this IP is complete.
+        /// </summary>
+        public bool IsComplete { get; set; }
+
         #region Constructor 
 
         /// <summary>
