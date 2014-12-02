@@ -12,5 +12,6 @@ namespace SupportMe.Data.Model
     public class InitialPresentation: BaseEntity
     {
         //Properties here.
+        public string Payload { get; set; }
     }
 }

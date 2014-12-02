@@ -1,0 +1,38 @@
+﻿@model SupportMe.Service.Model.Presentation
+
+@{
+    ViewBag.Title = "AddInitialPresentation";
+}
+
+<h2>Initial Presentation</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Person's details colleted here..</h4>
+        <hr />
+        
+        <!-- HTML EDITOR-->
+        @Html.EditorFor(m => m.name)
+
+        <input type="submit" name="action" value="Create" class="btn btn-default" />
+
+        <script type="text/jscript">
+            var InitialPresentation = {
+                "name" : m.name
+            };
+        </script>
+
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

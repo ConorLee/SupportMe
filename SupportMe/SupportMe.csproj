@@ -74,10 +74,12 @@
     <Compile Include="Data\Repository.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\IPresentationService.cs" />
+    <Compile Include="Service\Model\Presentation.cs" />
+    <Compile Include="Service\PresentationService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />
-    <Folder Include="Service\Model\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
